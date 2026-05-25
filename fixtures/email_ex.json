@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ex-1",
+    "subject": "Re: Spring committee notes + door code",
+    "body": "Hi Morgan,\n\nThanks for confirming. My date of birth on file should still be 07/22/1984 (sorry for the hyphen confusion last time—we had it as 07-22-1984 in one system).\n\nShip the replacement badges to Avery K. Lowell at 742 Evergreen Terrace, Springfield IL 62701. If that warehouse is backed up, use the backup routing: attn. Lowell / dock 17 / gate code 8842.\n\nQuick reminder: invoice total is exactly $43,882.71 before tax—please don’t confuse that with my employee ID which is EMP-884271 (they look annoyingly similar on the spreadsheet).\n\nAlso, my direct line is 312-555-0198. The client success pager shows 867-5309 but that listing is fictional from an old onboarding joke page, so ignore Extracting that.\n\nSee you Wednesday,\nRiley Chen\nSenior Ops"
+  },
+  {
+    "id": "ex-2",
+    "subject": "URGENT follow-up — account review",
+    "body": "Hello Team,\n\nPer compliance, verified identity details:\nLegal name: Dr. Elena V. Kostas (preferred: Elena Kostas).\nMother’s maiden name field in the ticket reads “Not applicable / declined” — that’s the literal string, not a real surname.\n\nAddress verification:\n- Primary: Unit 18B, 450 W Maple Ave, Apt 909, Boulder CO 80302\n- Mailing alias used on some forms: PO Box 24601 Cincinnati OH 45224\n\nDOB checkpoints:\nBirthdate documented as 1956-03-03 (sometimes mis-entered as 03/56/03 which is invalid but still scanned by tools).\nSSN suffix note: last four ***-***-4412 refers to tax docs; the “4412” also appears inside our truncated transaction id TXN884412F7 which is NOT a Social Security fragment.\n\nPhone numbers scattered in the narrative:\n- Mobile: +1 (415) 555-7821\n- “Home” listed as (020) 7946 0958 — that’s a famously fake UK TV number, parser should ideally avoid treating it like a subscriber line.\n\nPassport-ish looking stuff that isn’t one:\nThe travel desk pasted “DOC: 993755842” but it’s an internal backlog ID, not a passport number.\n\nRegards,\nSamir Patel\nRiskOps"
+  },
+  {
+    "id": "ex-3",
+    "subject": "Coffee next week?",
+    "body": "Jordan,\n\nLet’s grab coffee Thu 06/05/2027 near your office.\n\nI’ll be bringing forms for Theo Ng — DOB 12.31.1999 — and separately a packet labeled “Jordan Lee DOB placeholder: TBD”. That placeholder line is procedural text, there’s no hidden birth date there.\n\nAddresses mentioned in chatter (some are nonsense):\n- Real delivery spot: rear entrance, 88 King St W, Toronto ON M5H 1M3 — buzz 4040\n- Totally fake gag address from a meme: 123 Fake Street, Springfield ??? 00000 (don’t canonicalize zeros)\n- “456 Second Street” referenced only as ranking language (“finish 456 Second Street renovations”) — Second is an ordinal/word, may look like ‘Second St.’\n\nNumbers that look spicy but aren’t PII:\n- Pi day mention: starts 31415926535… treat as trivia not an account\n- Shoe size EU 424242 jokingly labeled “pin” in parentheses\n\nBank-ish pattern that’s a trap: ROUTING LOOKALIKE AB12CD34EF56 is a changelog token, not a routing number.\n\nCheers,\nPriya Shah\nPriya Shah | they/them\nps: footer says CASE-ID 1991-0817-6655321 — concatenated year/date junk, not ISO DOB despite appearances"
+  }
+]

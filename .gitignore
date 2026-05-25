@@ -1,0 +1,2 @@
+# Persisted extraction caches (may contain recovered PII from fixtures).
+/local_cache/

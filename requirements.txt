@@ -1,0 +1,6 @@
+flask>=3.0.0,<4
+flask-cors>=4.0.0,<5
+openai>=1.51.0
+python-dotenv>=1.0.0,<2
+boto3>=1.28.0,<2
+tiktoken>=0.7.0,<1

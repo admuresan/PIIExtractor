@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{{ ui.appTitle }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/app-layout.css') }}">
+</head>
+<body class="lpl-body">
+<script type="application/json" id="lpl-boot">{{ boot | tojson }}</script>
+<div class="lpl-shell">
+	<aside class="lpl-left" aria-label="{{ ui.leftSidebarAria }}">
+		<h2 class="lpl-region-title">{{ ui.leftSidebarHeading }}</h2>
+		<nav id="lpl-example-nav" class="lpl-example-nav"></nav>
+	</aside>
+	<main class="lpl-main" aria-label="{{ ui.centerAria }}">
+		<header class="lpl-main-head">
+			<h1 class="lpl-page-title">{{ ui.pageHeading }}</h1>
+			<div class="lpl-run-strip">
+				<div class="lpl-run-buttons">
+					<button type="button" id="lpl-extract" class="lpl-btn lpl-btn-primary" disabled></button>
+					<button type="button" id="lpl-extract-deterministic" class="lpl-btn lpl-btn-secondary" disabled></button>
+				</div>
+				<div id="lpl-run-indicator" class="lpl-run-indicator" hidden role="group" aria-label="{{ ui.runIndicatorAria }}">
+					<span id="lpl-run-elapsed" class="lpl-run-chip"></span>
+					<span class="lpl-run-chip lpl-run-sep" aria-hidden="true">{{ ui.runIndicatorSep }}</span>
+					<span id="lpl-run-lastlog" class="lpl-run-chip lpl-run-lastlog"></span>
+				</div>
+			</div>
+		</header>
+		<section class="lpl-meta" id="lpl-meta" hidden></section>
+		<details id="lpl-usage-meta" class="lpl-msg-meta" aria-label="{{ ui.usageDetailsAria }}" hidden>
+			<summary>{{ ui.usageDetailsSummary }}</summary>
+			<pre id="lpl-usage-pre" class="lpl-usage-pre"></pre>
+		</details>
+		<section class="lpl-viewport" aria-label="{{ ui.centerHeading }}">
+			<div id="lpl-body-pane" class="lpl-body-pane" tabindex="0"></div>
+		</section>
+		<p id="lpl-status" class="lpl-status" role="status"></p>
+		<details id="lpl-log-panel" class="lpl-log-panel" hidden aria-label="{{ ui.extractionLogsAria }}">
+			<summary id="lpl-log-summary">{{ ui.extractionLogsSummary }}</summary>
+			<pre id="lpl-log-pre" class="lpl-log-pre"></pre>
+		</details>
+
+	</main>
+	<aside class="lpl-right" aria-label="{{ ui.rightSidebarAria }}">
+		<h2 class="lpl-region-title">{{ ui.rightSidebarHeading }}</h2>
+		<div class="lpl-right-split">
+			<section class="lpl-pii-pane" aria-labelledby="lpl-pane-agent-heading">
+				<div class="lpl-pane-header">
+					<h3 id="lpl-pane-agent-heading" class="lpl-pane-title">{{ ui.sidebarAgentHeading }}</h3>
+					<button type="button" id="lpl-clear-agent-pane" class="lpl-btn lpl-btn-pane-clear" disabled aria-label="{{ ui.clearAgentPaneAria }}">{{ ui.clearAgentPaneLabel }}</button>
+				</div>
+				<div id="lpl-pii-root-agent" class="lpl-pii-root"></div>
+			</section>
+			<section class="lpl-pii-pane" aria-labelledby="lpl-pane-deterministic-heading">
+				<div class="lpl-pane-header">
+					<h3 id="lpl-pane-deterministic-heading" class="lpl-pane-title">{{ ui.sidebarDeterministicHeading }}</h3>
+					<button type="button" id="lpl-clear-deterministic-pane" class="lpl-btn lpl-btn-pane-clear" disabled aria-label="{{ ui.clearDeterministicPaneAria }}">{{ ui.clearDeterministicPaneLabel }}</button>
+				</div>
+				<div id="lpl-pii-root-deterministic" class="lpl-pii-root"></div>
+			</section>
+		</div>
+	</aside>
+</div>
+<script src="{{ url_for('static', filename='js/tokenFormat.js') }}"></script>
+<script src="{{ url_for('static', filename='js/deterministicPiiScan.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/mountEmailPiiLab.js') }}" defer></script>
+</body>
+</html>
